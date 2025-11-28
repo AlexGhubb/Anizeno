@@ -1,5 +1,6 @@
 package com.example.anizeno.view.auth.login
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Context
 import android.widget.Toast
@@ -53,8 +54,11 @@ import androidx.navigation.compose.rememberNavController
 import com.example.anizeno.R
 import com.google.firebase.auth.FirebaseAuth
 
-
+/**
+ * LoginScreen muestra la pantalla de inicio de sesión.
+ */
 //@OptIn(ExperimentalMaterial3Api::class)
+@SuppressLint("ContextCastToActivity")
 @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
 @Composable
 fun LoginScreen(
@@ -139,7 +143,6 @@ fun LoginScreen(
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
 
-                // TITLE
                 Text(
                     text = stringResource(R.string.login_title),
                     style = MaterialTheme.typography.headlineMedium.copy(
@@ -150,7 +153,6 @@ fun LoginScreen(
 
                 Spacer(Modifier.height(24.dp))
 
-                // EMAIL
                 OutlinedTextField(
                     value = email,
                     onValueChange = { email = it },
@@ -172,7 +174,6 @@ fun LoginScreen(
 
                 Spacer(Modifier.height(16.dp))
 
-                // PASSWORD
                 OutlinedTextField(
                     value = password,
                     onValueChange = { password = it },
@@ -198,7 +199,6 @@ fun LoginScreen(
 
                 Spacer(Modifier.height(24.dp))
 
-                // LOGIN BUTTON
                 Button(
                     onClick = { onLoginClick(email, password) },
                     modifier = Modifier.fillMaxWidth(),
@@ -208,7 +208,6 @@ fun LoginScreen(
                     Text(stringResource(R.string.login_button))
                 }
 
-                // RESET PASSWORD
                 TextButton(onClick = { sendPasswordReset() }) {
                     Text(
                         text = stringResource(R.string.forgot_password),
@@ -217,7 +216,6 @@ fun LoginScreen(
                     )
                 }
 
-                // GO TO REGISTER
                 TextButton(onClick = onRegisterClick) {
                     Text(
                         stringResource(R.string.go_register),
