@@ -30,7 +30,7 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
     val profileImageUri = _profileImageUri.asStateFlow()
 
     private val _userName = MutableStateFlow<String?>(null)
-    val userName = _userName.asStateFlow()
+    var userName = _userName.asStateFlow()
 
     private val _userBio = MutableStateFlow<String?>(null)
     val userBio = _userBio.asStateFlow()
@@ -78,7 +78,7 @@ class ProfileViewModel(application: Application) : AndroidViewModel(application)
     * 🔹 Cargar imagen de perfil
     * 🔹 Cargar nombre y bio del perfil
     */
-    fun loadUserProfile(userEmail: String) {
+    fun loadUserProfile(userEmail: String, username: String? = "") {
         viewModelScope.launch {
             val profile = profileDao.getUserProfile(userEmail)
             _profileImageUri.value = profile?.profileImageUri

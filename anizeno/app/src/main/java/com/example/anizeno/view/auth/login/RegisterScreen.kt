@@ -1,5 +1,6 @@
 package com.example.anizeno.view.auth.login
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -53,6 +54,7 @@ import androidx.compose.ui.unit.dp
 import com.example.anizeno.R
 
 //@OptIn(ExperimentalMaterial3Api::class)
+@SuppressLint("ContextCastToActivity")
 @OptIn(ExperimentalMaterial3WindowSizeClassApi::class)
 @Composable
 fun RegisterScreen(

@@ -10,6 +10,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
+import com.example.anizeno.data.local.room_db.UserProfileDao
 import com.example.anizeno.data.remote.dto.AnimeData
 import com.example.anizeno.view.profile.ProfileViewModel
 import com.example.anizeno.view.auth.AuthUiState
@@ -22,6 +23,7 @@ import com.example.anizeno.view.search.AnimeDetailScreen
 
 import com.example.anizeno.view.search.SearchScreen
 import com.google.firebase.auth.FirebaseAuth
+import kotlinx.coroutines.flow.StateFlow
 
 /**
  * Clase que representa la navegación de la aplicación.

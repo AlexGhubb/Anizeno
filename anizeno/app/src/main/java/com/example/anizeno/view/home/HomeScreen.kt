@@ -35,6 +35,8 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import coil.compose.AsyncImage
 import com.example.anizeno.data.remote.dto.AnimeData
 import com.example.anizeno.view.profile.ProfileViewModel
+import com.google.firebase.Firebase
+import com.google.firebase.auth.FirebaseAuth
 
 /**
  * Composable que representa la pantalla principal de la aplicación.
