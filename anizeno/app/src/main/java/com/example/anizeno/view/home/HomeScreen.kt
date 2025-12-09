@@ -105,7 +105,7 @@ fun HomeScreen(
                     containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.8f)
                 ) {
                     items.forEachIndexed { index, item ->
-                        NavigationBarItem(
+                        NavigationBarItem (
                             selected = selectedItem == index,
                             onClick = {
                                 selectedItem = index
